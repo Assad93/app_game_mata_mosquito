@@ -20,7 +20,7 @@ function criaPosicaoRandomica() {
 
     var mosquito = document.createElement('img');
     mosquito.src = "imagens/mosca.png";
-    mosquito.className = tamanhoRandomico();
+    mosquito.className = tamanhoRandomico() + ' ' + ladoAleatorio();
     mosquito.style.left = posicaoX + 'px';
     mosquito.style.top = posicaoY + 'px';
     mosquito.style.position = 'absolute';
@@ -41,4 +41,14 @@ function tamanhoRandomico() {
     }
 }
 
+function ladoAleatorio() {
+    var classe = Math.floor(Math.random() * 2);
+
+    switch (classe) {
+        case 0:
+            return 'ladoA';
+        case 1:
+            return 'ladoB';
+    }
+}
 
